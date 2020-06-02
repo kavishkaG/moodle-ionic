@@ -1,0 +1,25 @@
+os: linux
+dist: bionic
+group: edge
+
+language: node_js
+node_js: 11
+
+before_cache:
+  - rm -rf $HOME/.cache/electron-builder/wine
+
+cache:
+  directories:
+    - $HOME/.npm
+    - $HOME/.cache/electron
+    - $HOME/.cache/electron-builder
+
+before_script:
+  - npm install npm@latest -g
+  - gulp
+
+script:
+  - npm run build --bailOnLintError true --typeCheckOnLint true
+
+after_success:
+  - scripts/ci.sh

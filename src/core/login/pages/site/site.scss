@@ -1,0 +1,33 @@
+ion-app.app-root page-core-login-site {
+    .item-input:last-child {
+        margin-bottom: 20px;
+    }
+
+    .searchbar-ios {
+        background: transparent;
+
+        .searchbar-input {
+            background-color: $searchbar-ios-toolbar-input-background;
+        }
+    }
+
+    .core-site-error {
+        background: $red-light;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        user-select: text;
+
+        p, ion-card-header {
+            color: $red-dark;
+            user-select: text;
+        }
+        ion-card-header {
+            font-weight: bold;
+        }
+    }
+
+    .core-login-need-help {
+        text-decoration: underline;
+    }
+}
